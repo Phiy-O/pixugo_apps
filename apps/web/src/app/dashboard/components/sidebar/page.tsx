@@ -75,10 +75,16 @@ export default function Sidebar({ children }: any) {
                     </div>
 
                     {/* Bottom Menu */}
-                    <div>
+                    <div className="border-t-2 border-[#C9A36A] mx-2 my-4 py-2 transition-all duration-300">
                         <ul className={`flex flex-col gap-4 text-[#3E3A2D] transition-all duration-300 ${expanded ? "items-baseline" : "items-center"}`}>
                             <div className={`transition-all duration-300 ${expanded ? "w-44" : "w-11"}`}>
-                                <a className="flex items-center justify-start gap-3 rounded-lg p-2 hover:bg-[#E8C9A1] transition duration-300" href="/dashboard/settings">
+                                <a className="flex items-center justify-start gap-3 rounded-lg p-2 hover:bg-[#E8C9A1] transition duration-300" href="/dashboard/help">
+                                    <img className="h-7 shrink-0" src="/icons/icons8-question-mark-64.png" alt="question-mark" />
+                                    <span className={`overflow-hidden whitespace-nowrap text-xl transition-all duration-300 ${expanded ? "opacity-100 max-w-24" : "opacity-0 max-w-0"}`}>Help</span>
+                                </a>
+                            </div>
+                            <div className={`transition-all duration-300 ${expanded ? "w-44" : "w-11"}`}>
+                                <a className="flex items-center justify-start gap-3 rounded-lg p-2 hover:bg-[#E8C9A1] transition duration-300" href="/dashboard/info">
                                     <svg className="h-7 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z" fill="currentColor" /> </svg>
                                     <span className={`overflow-hidden whitespace-nowrap text-xl transition-all duration-300 ${expanded ? "opacity-100 max-w-24" : "opacity-0 max-w-0"}`}>Info</span>
                                 </a>
