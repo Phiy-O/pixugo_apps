@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
-import QuestButton from '../components/questButton/page';
+import QuestButton from '../components/QuestButton';
+import BubbleMessage from '../components/BubbleMessage';
+import AudioPlayer from '../components/AudioPlayer';
 
 export default function Home() {
     return (
@@ -13,15 +15,16 @@ export default function Home() {
         }}
         >
             <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-            <div className='absolute ml-20 flex justify-center items-center z-10'>
+            <div className='absolute h-screen ml-20 flex justify-center items-center z-10'>
 
                 {/* Bubble Message */}
-                <div>
-
-                </div>
+                <BubbleMessage />
 
                 {/* Quest Button */}
                 <QuestButton />
+
+                {/* Audio Player */}
+                <AudioPlayer />
 
             </div>
         </div>

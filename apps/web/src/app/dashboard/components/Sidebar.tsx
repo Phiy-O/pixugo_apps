@@ -1,6 +1,6 @@
 "use client"
 import React, { ReactNode, useState } from "react";
-import ProfileSidebar from "../profileSidebar/page";
+import ProfileSidebar from "./ProfileSidebar";
 
 export default function Sidebar({ children }: any) {
     const [expanded, setExpanded] = useState(false)

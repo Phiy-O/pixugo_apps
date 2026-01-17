@@ -1,5 +1,4 @@
 "use client";
-
 import { Crown, Flame, Coins } from "lucide-react"; // Install lucide-react jika belum
 
 interface ProfileSidebarProps {
@@ -55,7 +54,7 @@ export default function ProfileSidebar({ expanded, userData }: ProfileSidebarPro
                         bg-[#3E3A2D] object-cover
                         transition-all duration-300 rounded-full
                         ${expanded
-                                    ? "h-18 w-18 border-4 border-[#3E3A2D]"
+                                    ? "h-16 w-16 border-4 border-[#3E3A2D]"
                                     : "h-8 w-8 border-2 border-[#3E3A2D] hover:border-[#D98E04]" // Tambah efek hover saat collapsed
                                 }
                     `}
@@ -69,7 +68,7 @@ export default function ProfileSidebar({ expanded, userData }: ProfileSidebarPro
                 rounded-full flex items-center justify-center font-bold font-mono
                 transition-all duration-300 z-10
                 ${expanded
-                            ? "h-8 w-8 text-sm -bottom-2 -right-2 scale-100 opacity-100"
+                            ? "h-6 w-6 text-sm -bottom-1 -right-1 scale-100 opacity-100"
                             : "h-4 w-4 text-[8px] bottom-0 right-0 scale-0 opacity-0"}
             `}>
                         {user.level}
@@ -80,13 +79,7 @@ export default function ProfileSidebar({ expanded, userData }: ProfileSidebarPro
                     className={`
             transition-all duration-300 flex flex-col items-center w-full px-2 overflow-hidden ease-in-out
             ${expanded 
-            /* STATE OPEN: */
-            /* max-h-[200px] harus cukup besar untuk menampung semua konten */
-            /* delay-100 memberikan waktu sidebar melebar dulu baru text muncul */
             ? "max-h-24 opacity-100 translate-y-0 delay-75" 
-            
-            /* STATE CLOSED: */
-            /* max-h-0 menyembunyikan tinggi secara smooth */
             : "max-h-0 opacity-0 translate-y-4"
             }
           `}
@@ -105,14 +98,14 @@ export default function ProfileSidebar({ expanded, userData }: ProfileSidebarPro
                     </div>
 
                     {/* XP BAR SYSTEM */}
-                    <div className="w-full mb-3 group relative">
-                        <div className="flex justify-between text-[10px] font-bold text-[#3E3A2D] mb-0.5 px-1">
+                    <div className="w-36 mb-3 group relative">
+                        <div className="flex justify-between text-[10px] font-bold text-[#3E3A2D] mb-0.5 px-2">
                             <span>XP</span>
                             <span>{user.currentXp}/{user.maxXp}</span>
                         </div>
                         {/* Container Bar */}
                         <div className="bg-[#3E3A2D] p-0.5 rounded-md">
-                            <div className="bg-[#584D3D] h-2 rounded-sm overflow-hidden relative w-full">
+                            <div className="bg-[#584D3D] h-1.5 rounded-sm overflow-hidden relative w-full">
                                 {/* Progress Fill */}
                                 <div
                                     className="bg-[#6CBF84] h-full transition-all duration-500 ease-out relative"

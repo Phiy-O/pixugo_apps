@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Sidebar from "@/app/dashboard/components/sidebar/page";
+import Sidebar from "@/app/dashboard/components/Sidebar";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {

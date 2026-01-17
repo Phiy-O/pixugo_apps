@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react';
-// import QuestModal from '../questLog/page';
 import { Map, Plus, Check, Trash2, X } from 'lucide-react';
 
 export default function QuestButton() {
@@ -12,21 +11,15 @@ export default function QuestButton() {
     ]);
 
     const handleDelete = (id : number) => {
-        // Filter out the item with the specified ID
         const updatedItems = tasks.filter(task => task.id !== id);
-        // Update the state with the new array
         setTasks(updatedItems);
     };
 
     const handleDone = (id : number) => {
         setTasks((prevTasks) =>
-            // Kita looping semua task
             prevTasks.map((task) =>
-                // Cek apakah ID task ini sama dengan ID yang dicari?
                 task.id === id
-                    // JIKA IYA: Buat object baru, copy data lama (...task), lalu ubah done jadi true
                     ? { ...task, done: !task.done }
-                    // JIKA TIDAK: Biarkan task apa adanya
                     : task
             )
         );
@@ -72,7 +65,7 @@ export default function QuestButton() {
             <div>
                 <div
                     className={`
-        fixed bottom-20 right-22
+        fixed bottom-20 right-20
         w-80 max-h-1/2
         bg-[#FDF6E3] /* Warna Kertas Perkamen */
         border-4 border-[#8B5E3C] /* Border Kayu */
@@ -133,7 +126,7 @@ export default function QuestButton() {
                                         </span>
 
                                         {/* Delete Action (Muncul saat hover) */}
-                                        <button onClick={() => handleDelete(task.id)} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#D95763]">
+                                        <button onClick={() => handleDelete(task.id)} className="opacity-100 transition-opacity text-[#D95763]">
                                             <Trash2 size={14} />
                                         </button>
                                     </div>
