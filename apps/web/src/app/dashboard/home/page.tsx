@@ -1,19 +1,28 @@
 "use client"
 import React, { useState } from 'react';
+import QuestButton from '../components/questButton/page';
 
 export default function Home() {
     return (
         <div className='h-dvh' style={{
-            backgroundImage: `url("/images/pixugo-dashboard-background.jpg")`,
+            backgroundImage: `url("https://i.pinimg.com/originals/93/9e/92/939e9273e3d6ef4f281cda31e9e62488.gif")`,
             backgroundPosition: "center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
+            imageRendering: 'pixelated',
             zIndex: -1
         }}
         >
-            <div className='absolute left-0 right-0 h-full -z-1 bg-black opacity-50'></div>
-            <div className='flex justify-center z-0'>
-                <p className='text-white'>Hello World</p>
+            <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+            <div className='absolute ml-20 flex justify-center items-center z-10'>
+
+                {/* Bubble Message */}
+                <div>
+
+                </div>
+
+                {/* Quest Button */}
+                <QuestButton />
+
             </div>
         </div>
     )

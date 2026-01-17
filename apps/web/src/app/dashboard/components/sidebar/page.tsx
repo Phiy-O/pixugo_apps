@@ -1,34 +1,24 @@
 "use client"
 import React, { ReactNode, useState } from "react";
-
+import ProfileSidebar from "../profileSidebar/page";
 
 export default function Sidebar({ children }: any) {
     const [expanded, setExpanded] = useState(false)
 
     return (
-        <aside className="fixed h-screen">
-            <nav className={`fixed z-10 bg-[#F1D9B5] border-r-4 border-[#C9A36A] h-screen transition-all duration-300 ${expanded ? "w-1/8" : "w-1/24"}`}>
+        <aside className="absolute h-screen">
+            <nav className={`fixed z-20 bg-[#F1D9B5] border-r-4 border-[#C9A36A] h-screen transition-all duration-300 ${expanded ? "w-1/8" : "w-1/24"}`}>
                 <div className="h-screen flex flex-col justify-between items-left py-4">
                     {/* Top Menu */}
                     <div className="">
                         <div className="flex flex-col items-center gap-2 justify-center transition-all duration-300">
-                            <button type="button" onClick={() => setExpanded((curr) => !curr)} className={`text-[#3E3A2D] rounded-xl justify-start cursor-pointer p-2 hover:bg-[#E8C9A1] transition-all duration-300 mx-2 flex items-center gap-2 ${expanded ? "w-44" : "w-11"}`}>
+                            <button type="button" onClick={() => setExpanded((curr) => !curr)} className={`text-[#3E3A2D] rounded-xl justify-start cursor-pointer p-2 hover:bg-[#E8C9A1] transition-all duration-300 mx-2 flex items-center gap-3 ${expanded ? "w-44" : "w-11"}`}>
                                 <svg className="w-7 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm16 5H4v2h16v-2z" fill="currentColor" /> </svg>
                                 <span className={`text-xl overflow-hidden whitespace-nowrap transition-all duration-300 ${expanded ? "opacity-100 max-w-full" : "opacity-0 max-w-0"}`}>Workspace</span>
                             </button>
 
                             {/* profile icon */}
-                            <div className={`bg-[#C9A36A] rounded-xl p-1 transition-all duration-300 flex flex-col justify-center text-center ${expanded ? "w-44" : "w-11"}`}>
-                                <div className="shrink-0 flex justify-center">
-                                    <a className="rounded-full transition-all duration-300" href="/dashboard/profile">
-                                        <img className={`shrink-0 ${expanded ? "h-16 w-16 my-2" : "h-8 w-8"} transition-all duration-300 rounded-full border-3 border-[#3E3A2D]`} src="/images/avatar-img.jpeg" alt="avatar-img" />
-                                    </a>
-                                </div>
-                                <div className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${expanded ? "opacity-100 max-h-16" : "opacity-0 max-h-0"}`}>
-                                    <p>Andika Vio Pratama</p>
-                                    <p>Beginner</p>
-                                </div>
-                            </div>
+                            <ProfileSidebar expanded={expanded}/>
                         </div>
 
                         {/* Logo */}
