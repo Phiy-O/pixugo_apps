@@ -21,22 +21,25 @@
   }
 }
 
+/* html {
+  cursor: url("/cursor/pixugo-cursor (1).png"), auto;
+} */
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "VT323", monospace;
-  cursor: url("/icons/pixugo-cursor (1).png"), auto;
 }
 
-a,
+/* a,
 button,
 [role="button"],
 .cursor-pointer {
-  cursor: url("/icons/pixugo-cursor-pointer (1).png") 0 0, pointer;
+  cursor: url("/cursor/pixugo-cursor-pointer (1).png") 0 0, pointer;
 }
 
 input,
 textarea,
 [contenteditable="true"] {
-  cursor: url("/icons/pixugo-cursor-text (1).png"), text;
-}
+  cursor: url("/cursor/pixugo-cursor-text (1).png"), text;
+} */

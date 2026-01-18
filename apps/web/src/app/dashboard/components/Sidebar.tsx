@@ -55,7 +55,7 @@ export default function Sidebar({ children }: any) {
                                     </a>
                                 </div>
                                 <div className={`transition-all duration-300 ${expanded ? "w-44" : "w-11"}`}>
-                                    <a className="flex items-center justify-start gap-3 rounded-lg p-2 hover:bg-[#E8C9A1] transition duration-300" href="/dashboard/settings">
+                                    <a className="flex items-center justify-start gap-3 rounded-lg p-2 hover:bg-[#E8C9A1] transition duration-300" href="/dashboard/setting">
                                         <svg className="h-7 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 8h4m0 0V6h4v2M7 8v2h4V8m0 0h10M3 16h10m0 0v-2h4v2m-4 0v2h4v-2m0 0h4" stroke="currentColor" strokeWidth="2" strokeLinecap="square" /> </svg>
                                         <span className={`overflow-hidden whitespace-nowrap text-xl transition-all duration-300 ${expanded ? "opacity-100 max-w-24" : "opacity-0 max-w-0"}`}>Setting</span>
                                     </a>

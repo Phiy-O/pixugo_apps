@@ -1,10 +1,11 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
+
 
 export default function Overview() {
     return (
         <div>
-            <p>Ini Overview</p>
+            <h1>ini adalah Overview</h1>
         </div>
     )
 }
