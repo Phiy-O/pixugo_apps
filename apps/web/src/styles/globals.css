@@ -14,7 +14,7 @@
   --font-pixelify-sans: var(--font-pixelify-sans);
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -25,4 +25,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "VT323", monospace;
+  cursor: url("/icons/pixugo-cursor (1).png"), auto;
+}
+
+a,
+button,
+[role="button"],
+.cursor-pointer {
+  cursor: url("/icons/pixugo-cursor-pointer (1).png") 0 0, pointer;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: url("/icons/pixugo-cursor-text (1).png"), text;
 }
