@@ -1,7 +1,19 @@
-import React from 'react';
-import { Play, SkipBack, SkipForward, Volume2, Music } from "lucide-react";
+import React, { useRef, useState } from 'react';
+import { Play, SkipBack, SkipForward, Volume2, Music, Pause } from "lucide-react";
 
 export default function AudioPlayer() {
+    const [isPlaying, setIsPlaying] = useState(true);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+
+    const audioRef = useRef(null);
+
+    const handleSeek = (e:any) => {}
+
+    function handlePlayPause() {
+        setIsPlaying((curr) => !curr)
+    }
+
     return (
         // --- CONTAINER UTAMA (Compact Bar) ---
         <div className="
@@ -39,12 +51,13 @@ export default function AudioPlayer() {
                         </p>
                     </div>
                     <span className="text-[10px] font-mono font-bold text-[#3E3A2D]">
-                        02:15
+                        {currentTime}
                     </span>
                 </div>
 
                 {/* Custom Pixel Progress Bar */}
                 <div className="h-4 w-full bg-[#E6DCC3] border-2 border-[#3E3A2D] relative rounded-sm">
+                    {/* <audio src=""></audio> */}
                     {/* Fill Bar */}
                     <div className="absolute top-0 left-0 h-full w-[40%] bg-[#6CBF84] border-r-2 border-[#3E3A2D]"></div>
                 </div>
@@ -53,35 +66,18 @@ export default function AudioPlayer() {
             {/* 3. KANAN: CONTROLS (Buttons) */}
             <div className="flex items-center gap-2 pl-2 border-l-2 border-[#E6DCC3]">
 
-                {/* Tombol Back Kecil
-                <button className="
-            group h-8 w-8 
-            flex items-center justify-center 
-            hover:bg-[#EED9A6] rounded transition-colors
-        ">
-                    <SkipBack size={16} className="fill-[#3E3A2D] text-[#3E3A2D]" />
-                </button> */}
-
                 {/* Tombol PLAY Utama (Lebih Menonjol) */}
-                <button className="
-            h-10 w-10 
-            bg-[#3E3A2D] hover:bg-[#2a271f]
-            text-[#FDF6E3]
-            rounded shadow-[2px_2px_0px_#8B5E3C] 
-            active:translate-y-0.5 active:shadow-none
-            flex items-center justify-center transition-all
-        ">
-                    <Play size={18} fill="#FDF6E3" />
+                <button onClick={handlePlayPause} className="
+                    h-10 w-10 
+                    bg-[#3E3A2D] hover:bg-[#2a271f]
+                    text-[#FDF6E3]
+                    rounded shadow-[2px_2px_0px_#8B5E3C] 
+                    active:translate-y-0.5 active:shadow-none
+                    flex items-center justify-center transition-all
+                ">
+                    {isPlaying ? <Play size={18} fill="#FDF6E3" /> : <Pause size={18} fill="#FDF6E3" />}
+                    
                 </button>
-
-                {/* Tombol Next Kecil
-                <button className="
-            group h-8 w-8 
-            flex items-center justify-center 
-            hover:bg-[#EED9A6] rounded transition-colors
-        ">
-                    <SkipForward size={16} className="fill-[#3E3A2D] text-[#3E3A2D]" />
-                </button> */}
 
             </div>
         </div>

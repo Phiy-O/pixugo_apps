@@ -68,7 +68,7 @@ export default function ProfileSidebar({ expanded, userData }: ProfileSidebarPro
                 rounded-full flex items-center justify-center font-bold font-mono
                 transition-all duration-300 z-10
                 ${expanded
-                            ? "h-6 w-6 text-sm -bottom-1 -right-1 scale-100 opacity-100"
+                            ? "h-6 w-6 text-sm bottom-0 right-0 scale-100 opacity-100"
                             : "h-4 w-4 text-[8px] bottom-0 right-0 scale-0 opacity-0"}
             `}>
                         {user.level}
