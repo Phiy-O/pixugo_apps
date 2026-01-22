@@ -36,8 +36,8 @@ export default function Sidebar({ children }: any) {
                     {/* Bottom Menu */}
                     <div className="border-t-2 border-[#C9A36A] mx-2 my-4 py-2 transition-all duration-300">
                         <ul className={`flex flex-col gap-4 text-[#3E3A2D] transition-all duration-300 ${expanded ? "items-baseline" : "items-center"}`}>
-                            <SidebarItem href="/dashboard/help" expanded={expanded} icon={<img className="h-7 shrink-0" src="/icons/icons8-question-mark-64.png" alt="question-mark" />} label="Setting" />
-                            <SidebarItem href="/dashboard/info" expanded={expanded} icon={<svg className="h-7 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z" fill="currentColor" /> </svg>} label="Setting" />
+                            <SidebarItem href="/dashboard/help" expanded={expanded} icon={<img className="h-7 shrink-0" src="/icons/icons8-question-mark-64.png" alt="question-mark" />} label="Help" />
+                            <SidebarItem href="/dashboard/info" expanded={expanded} icon={<svg className="h-7 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z" fill="currentColor" /> </svg>} label="Info" />
                         </ul>
                     </div>
                 </div>
