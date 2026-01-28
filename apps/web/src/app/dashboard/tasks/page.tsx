@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import SimpleTaskCards from '../components/QuestCard';
 import { Swords, Clock, Calendar, Star, CheckCircle2, Bookmark, Flame, MoreHorizontal, Plus } from 'lucide-react';
 
 export default function Tasks() {
@@ -44,37 +45,7 @@ export default function Tasks() {
                         </div>
 
                         {/* Task List Container */}
-                        <div className="p-4 space-y-3 min-h-[300px]">
-                            {/* Task Item 1 (High Priority) */}
-                            <div className="group flex items-center gap-3 bg-white p-3 rounded-lg border-2 border-[#D95763] shadow-[4px_4px_0px_rgba(217,87,99,0.2)] hover:shadow-[2px_2px_0px_rgba(217,87,99,0.2)] hover:translate-y-0.5 transition-all cursor-pointer">
-                                <div className="h-6 w-6 rounded border-2 border-[#D95763] bg-[#FFF5F5]"></div>
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-[#3E3A2D]">Selesaikan Design System</h3>
-                                    <p className="text-xs text-[#D95763] font-bold mt-0.5">⚠️ HIGH PRIORITY</p>
-                                </div>
-                                <span className="text-xs font-mono font-bold text-[#8B5E3C] bg-[#EED9A6] px-2 py-1 rounded border border-[#8B5E3C]">
-                                    +150 XP
-                                </span>
-                            </div>
-
-                            {/* Task Item 2 (Normal) */}
-                            <div className="group flex items-center gap-3 bg-white p-3 rounded-lg border-2 border-[#EED9A6] hover:border-[#8B5E3C] transition-all cursor-pointer">
-                                <div className="h-6 w-6 rounded border-2 border-[#8B5E3C] bg-[#FDF6E3]"></div>
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-[#3E3A2D]">Meeting dengan Client</h3>
-                                </div>
-                            </div>
-
-                            {/* Task Item 3 (Completed) */}
-                            <div className="flex items-center gap-3 bg-[#E6DCC3] p-3 rounded-lg border-2 border-transparent opacity-60">
-                                <div className="h-6 w-6 rounded bg-[#6CBF84] border-2 border-[#4A8F5D] flex items-center justify-center">
-                                    <CheckCircle2 size={16} className="text-white" />
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-[#3E3A2D] line-through">Minum Air 2 Liter</h3>
-                                </div>
-                            </div>
-                        </div>
+                        <SimpleTaskCards />
                     </div>
 
                     {/* 2. SECTION: DAILY HABITS (Grid Kecil) */}

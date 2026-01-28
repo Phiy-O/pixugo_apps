@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Settings, Volume2, Bell, Monitor,
     User, Moon, ShieldAlert, LogOut,
@@ -7,6 +7,8 @@ import {
 } from 'lucide-react';
 
 export default function Setting() {
+    const [vacButton, setVacButton] = useState(false);
+
     return (
         <div className="min-h-screen bg-[#E6DCC3] p-8 text-[#3E3A2D] flex flex-col gap-8 ml-16">
 
@@ -87,7 +89,9 @@ export default function Setting() {
                                 </h4>
                                 <p className="text-xs text-[#8B5E3C] font-medium w-3/4">Pause your streaks while you are away. No XP loss for missed dailies.</p>
                             </div>
-                            <RetroToggle isOn={false} />
+                            <button onClick={() => setVacButton((curr) => !curr)}>
+                                <RetroToggle isOn={vacButton ? true : false} />
+                            </button>
                         </div>
                     </SectionCard>
 
